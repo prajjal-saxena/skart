@@ -1,0 +1,581 @@
+import React, { useState, useEffect } from 'react'
+import ReactDOM from "https://cdn.skypack.dev/react-dom@17.0.1";
+import Pagination  from "https://cdn.skypack.dev/rc-pagination@3.1.15";
+import styled from 'styled-components';
+import Table from "../../base-components/Table";
+
+
+const index = () => {
+
+3+
+
+const datatableUsers = [
+    {
+      "name": "Currey Slee",
+      "position": "Food Chemist",
+      "gender": "Male",
+      "office": "Damietta",
+      "email": "cslee0@netlog.com",
+      "phone": "532 179 1377",
+      "salary": "$49491.60",
+      "id": 1
+    },
+    {
+      "name": "Chrissie MacInerney",
+      "position": "Account Executive",
+      "gender": "Male",
+      "office": "Ferreiras",
+      "email": "cmacinerney1@youtu.be",
+      "phone": "383 685 3274",
+      "salary": "$17269.83",
+      "id": 2
+    },
+    {
+      "name": "Karly Okeshott",
+      "position": "Cost Accountant",
+      "gender": "Female",
+      "office": "Cornillon",
+      "email": "kokeshott2@bravesites.com",
+      "phone": "927 119 1091",
+      "salary": "$26878.49",
+      "id": 3
+    },
+    {
+      "name": "Hermia Dayton",
+      "position": "VP Sales",
+      "gender": "Female",
+      "office": "Chernoyerkovskaya",
+      "email": "hdayton3@un.org",
+      "phone": "518 243 8139",
+      "salary": "$40424.12",
+      "id": 4
+    },
+    {
+      "name": "Willem O'Hdirscoll",
+      "position": "Recruiting Manager",
+      "gender": "Female",
+      "office": "Sukatani",
+      "email": "wohdirscoll4@businessinsider.com",
+      "phone": "976 264 4693",
+      "salary": "$43236.35",
+      "id": 5
+    },
+    {
+      "name": "Jose Caswall",
+      "position": "Environmental Tech",
+      "gender": "Female",
+      "office": "Concepcion",
+      "email": "jcaswall5@e-recht24.de",
+      "phone": "623 142 0771",
+      "salary": "$47377.66",
+      "id": 6
+    },
+    {
+      "name": "Cal Russell",
+      "position": "Computer Systems Analyst II",
+      "gender": "Female",
+      "office": "Melíssi",
+      "email": "crussell6@histats.com",
+      "phone": "643 259 1412",
+      "salary": "$8542.68",
+      "id": 7
+    },
+    {
+      "name": "Lavinia Atwill",
+      "position": "Occupational Therapist",
+      "gender": "Male",
+      "office": "Mendeleyevo",
+      "email": "latwill7@hexun.com",
+      "phone": "479 589 7945",
+      "salary": "$13361.55",
+      "id": 8
+    },
+    {
+      "name": "Sophronia De Hooch",
+      "position": "Account Representative II",
+      "gender": "Female",
+      "office": "Verkhnyaya Toyma",
+      "email": "sde8@mozilla.org",
+      "phone": "592 831 1701",
+      "salary": "$35778.22",
+      "id": 9
+    },
+    {
+      "name": "Harmon Argente",
+      "position": "Media Manager IV",
+      "gender": "Male",
+      "office": "Azeitão",
+      "email": "hargente9@vistaprint.com",
+      "phone": "823 917 4216",
+      "salary": "$42515.25",
+      "id": 10
+    },
+    {
+      "name": "Andreana Hablot",
+      "position": "Geological Engineer",
+      "gender": "Male",
+      "office": "Rameshki",
+      "email": "ahablota@digg.com",
+      "phone": "425 484 6588",
+      "salary": "$51025.31",
+      "id": 11
+    },
+    {
+      "name": "Elbertina Hinnerk",
+      "position": "Account Coordinator",
+      "gender": "Female",
+      "office": "Fujishiro",
+      "email": "ehinnerkb@typepad.com",
+      "phone": "629 484 9269",
+      "salary": "$39220.72",
+      "id": 12
+    },
+    {
+      "name": "Dill Morrallee",
+      "position": "Assistant Media Planner",
+      "gender": "Female",
+      "office": "Sandyford",
+      "email": "dmorralleec@eventbrite.com",
+      "phone": "899 413 7313",
+      "salary": "$4794.31",
+      "id": 13
+    },
+    {
+      "name": "Quinn Gully",
+      "position": "Actuary",
+      "gender": "Male",
+      "office": "Palangue",
+      "email": "qgullyd@sogou.com",
+      "phone": "218 562 2082",
+      "salary": "$42963.14",
+      "id": 14
+    },
+    {
+      "name": "Edythe Comberbach",
+      "position": "VP Quality Control",
+      "gender": "Female",
+      "office": "Boden",
+      "email": "ecomberbache@cnn.com",
+      "phone": "541 172 4815",
+      "salary": "$13845.40",
+      "id": 15
+    },
+    {
+      "name": "Marco Ferrotti",
+      "position": "Business Systems Development Analyst",
+      "gender": "Female",
+      "office": "Pingshanhu",
+      "email": "mferrottif@pcworld.com",
+      "phone": "324 672 8219",
+      "salary": "$55084.97",
+      "id": 16
+    },
+    {
+      "name": "Trumaine Underhill",
+      "position": "Data Coordiator",
+      "gender": "Female",
+      "office": "Casimiro de Abreu",
+      "email": "tunderhillg@house.gov",
+      "phone": "243 329 8744",
+      "salary": "$43372.11",
+      "id": 17
+    },
+    {
+      "name": "Mariana Trevillion",
+      "position": "GIS Technical Architect",
+      "gender": "Male",
+      "office": "Mafinga",
+      "email": "mtrevillionh@imgur.com",
+      "phone": "632 192 1248",
+      "salary": "$38514.84",
+      "id": 18
+    },
+    {
+      "name": "Rowney D'Almeida",
+      "position": "Community Outreach Specialist",
+      "gender": "Male",
+      "office": "Tokombere",
+      "email": "rdalmeidai@topsy.com",
+      "phone": "226 530 9271",
+      "salary": "$20900.80",
+      "id": 19
+    },
+    {
+      "name": "Jule Sibborn",
+      "position": "Assistant Manager",
+      "gender": "Female",
+      "office": "Belize City",
+      "email": "jsibbornj@mashable.com",
+      "phone": "801 520 5097",
+      "salary": "$4559.17",
+      "id": 20
+    },
+    {
+      "name": "Aylmer Buse",
+      "position": "Occupational Therapist",
+      "gender": "Male",
+      "office": "Yeşilköy",
+      "email": "abusek@etsy.com",
+      "phone": "941 619 5464",
+      "salary": "$17705.92",
+      "id": 21
+    },
+    {
+      "name": "Iver Echlin",
+      "position": "Research Assistant II",
+      "gender": "Male",
+      "office": "San Pablo",
+      "email": "iechlinl@narod.ru",
+      "phone": "433 387 1306",
+      "salary": "$47924.22",
+      "id": 22
+    },
+    {
+      "name": "Cordy Gason",
+      "position": "Sales Associate",
+      "gender": "Male",
+      "office": "Sudimoro",
+      "email": "cgasonm@nature.com",
+      "phone": "862 960 0108",
+      "salary": "$33323.62",
+      "id": 23
+    },
+    {
+      "name": "Laurene Haquard",
+      "position": "Environmental Tech",
+      "gender": "Male",
+      "office": "Sadao",
+      "email": "lhaquardn@studiopress.com",
+      "phone": "726 602 4312",
+      "salary": "$5762.37",
+      "id": 24
+    },
+    {
+      "name": "Krysta Sudworth",
+      "position": "Engineer IV",
+      "gender": "Female",
+      "office": "Voznesen’ye",
+      "email": "ksudwortho@apple.com",
+      "phone": "936 339 2908",
+      "salary": "$58375.71",
+      "id": 25
+    },
+    {
+      "name": "Emyle Roux",
+      "position": "Project Manager",
+      "gender": "Male",
+      "office": "Järvakandi",
+      "email": "erouxp@blinklist.com",
+      "phone": "266 864 5798",
+      "salary": "$54046.82",
+      "id": 26
+    },
+    {
+      "name": "Nicky Sommerlie",
+      "position": "Financial Analyst",
+      "gender": "Female",
+      "office": "Ljubno ob Savinji",
+      "email": "nsommerlieq@go.com",
+      "phone": "801 362 9219",
+      "salary": "$7969.75",
+      "id": 27
+    },
+    {
+      "name": "Dominga Thaller",
+      "position": "Executive Secretary",
+      "gender": "Male",
+      "office": "Xijiang",
+      "email": "dthallerr@i2i.jp",
+      "phone": "752 964 8510",
+      "salary": "$51121.51",
+      "id": 28
+    },
+    {
+      "name": "Norris Turri",
+      "position": "Executive Secretary",
+      "gender": "Male",
+      "office": "Zhongxing",
+      "email": "nturris@list-manage.com",
+      "phone": "524 137 8065",
+      "salary": "$29475.42",
+      "id": 29
+    },
+    {
+      "name": "Lora Lamb",
+      "position": "Software Consultant",
+      "gender": "Female",
+      "office": "Yuqian",
+      "email": "llambt@canalblog.com",
+      "phone": "418 783 8567",
+      "salary": "$49245.77",
+      "id": 30
+    }]
+
+
+
+
+const [perPage, setPerPage] = useState(10);
+    const [size, setSize] = useState(perPage);
+    const [current, setCurrent] = useState(1);
+
+    const PerPageChange = (value) => {
+        setSize(value);
+        const newPerPage = Math.ceil(datatableUsers.length / value);
+        if (current > newPerPage) {
+            setCurrent(newPerPage);
+        }
+    }
+
+    const getData = (current, pageSize) => {
+        // Normally you should get the data from the server
+        return datatableUsers.slice((current - 1) * pageSize, current * pageSize);
+    };
+
+    const PaginationChange = (page, pageSize) => {
+        setCurrent(page);
+        setSize(pageSize)
+    }
+
+    const PrevNextArrow = (current, type, originalElement) => {
+        if (type === 'prev') {
+            return <button><i className="fa fa-angle-double-left"></i></button>;
+        }
+        if (type === 'next') {
+            return <button><i className="fa fa-angle-double-right"></i></button>;
+        }
+        return originalElement;
+    }
+
+  return (
+    <>
+    <Wrapper>
+            <div className="container-fluid mt-5 mb-5">
+                <div className="row justify-content-center">
+                    <div className="col-md-10">
+                        <div className="card">
+                        <div className="card-body p-0">
+                            
+                            <div className="table-filter-info">
+                                
+                                <Pagination
+                                    className="pagination-data"
+                                    showTotal={(total, range) => `Showing ${range[0]}-${range[1]} of ${total}`}
+                                    onChange={PaginationChange}
+                                    total={datatableUsers.length}
+                                    current={current}
+                                    pageSize={size}
+                                    showSizeChanger={false}
+                                    itemRender={PrevNextArrow}
+                                    onShowSizeChange={PerPageChange}
+                                />
+                            </div>
+                            <div className="overflow-x-auto">
+                                <Table className="table table-text-small mb-0">
+                                    <Table.Thead variant='dark' className="thead-primary table-sorting">
+                                        <Table.Tr>
+                                            <Table.Th className="whitespace-nowrap">#</Table.Th>
+                                            <Table.Th className="whitespace-nowrap">Name</Table.Th>
+                                            <Table.Th className="whitespace-nowrap">Position</Table.Th>
+                                            <Table.Th className="whitespace-nowrap">Gender</Table.Th>
+                                            <Table.Th className="whitespace-nowrap">Email</Table.Th>
+                                            <Table.Th className="whitespace-nowrap">Salary</Table.Th>
+                                        </Table.Tr>
+                                    </Table.Thead>
+                                    <Table.Tbody>
+                                        {
+                                            getData(current, size).map((data, index) => {
+                                                return (
+                                                    <Table.Tr key={data.id}>
+                                                        <Table.Td>{data.id}</Table.Td>
+                                                        <Table.Td>{data.name}</Table.Td>
+                                                        <Table.Td>{data.position}</Table.Td>
+                                                        <Table.Td>{data.gender}</Table.Td>
+                                                        <Table.Td>{data.email}</Table.Td>
+                                                        <Table.Td>{data.salary}</Table.Td>
+                                                    </Table.Tr>
+                                                )
+                                            })
+                                        }
+                                    </Table.Tbody>
+                                </Table>
+                            </div>
+                          <div className="table-filter-info">
+                                
+                                <Pagination
+                                    className="pagination-data"
+                                    showTotal={(total, range) => `Showing ${range[0]}-${range[1]} of ${total}`}
+                                    onChange={PaginationChange}
+                                    total={datatableUsers.length}
+                                    current={current}
+                                    pageSize={size}
+                                    showSizeChanger={false}
+                                    itemRender={PrevNextArrow}
+                                    onShowSizeChange={PerPageChange}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            </Wrapper>
+        </>
+  )};
+
+const Wrapper = styled.section`
+.form-control {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 15px 20px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #475f7b;
+    background-color: #fff;
+    border: 1px solid #dfe3e7;
+    border-radius: 0.267rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-control:focus {
+    color: #475f7b;
+    background-color: #fff;
+    border-color: #5a8dee;
+    outline: 0;
+    box-shadow: 0 3px 8px 0 rgb(0 0 0 / 10%);
+}
+.card {
+     box-shadow: 0px 5px 10px rgba(90, 116, 148, 0.3);
+    background-color: #fff;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: #475f7b;
+    overflow: hidden;
+}
+.pagination-data{
+  padding: 0;
+  margin: 0;
+}
+.pagination-data li{
+  list-style:none;
+}
+.table-filter-info{
+  padding : 15px;
+}
+.thead-primary tr th {
+    background-color: #5a8dee;
+    border-color: #5a8dee;
+    color: #fff;
+}
+
+.rc-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.rc-pagination-item,
+.rc-pagination-prev, 
+.rc-pagination-jump-prev, 
+.rc-pagination-jump-next {
+    margin-right: 8px;
+}
+
+.rc-pagination-total-text{
+  margin-right: 12px;
+  cursor: initial;
+}
+
+.rc-pagination-jump-next, 
+.rc-pagination-jump-prev, 
+.rc-pagination-next, 
+.rc-pagination-prev {
+    display: inline-block;
+    min-width: 28px;
+    height: 28px;
+    color: rgba(0,0,0,.85);
+    font-family: Arial;
+    line-height: 28px;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all .3s;
+}
+.rc-pagination-jump-next button, 
+.rc-pagination-jump-prev button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #666;
+}
+.rc-pagination-jump-next button:after, 
+.rc-pagination-jump-prev button:after {
+    display: block;
+    content: "•••";
+}
+.rc-pagination-item, 
+.rc-pagination-prev, 
+.rc-pagination-next, 
+.rc-pagination-total-text {
+    min-width: initial;
+    height: auto;
+    line-height: initial;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.rc-pagination-item a, 
+.rc-pagination-item button, 
+.rc-pagination-prev a, 
+.rc-pagination-prev button, 
+.rc-pagination-next a, 
+.rc-pagination-next button,
+.rc-pagination-total-text a, 
+.rc-pagination-total-text button {
+    padding: 6px 8px;
+    height: auto;
+    min-width: 32px;
+    min-height: 32px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: #656f84 !important;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.rc-pagination-item.rc-pagination-item-active a, 
+.rc-pagination-item.rc-pagination-item-active a:hover, 
+.rc-pagination-prev.rc-pagination-item-active a, 
+.rc-pagination-prev.rc-pagination-item-active a:hover, 
+.rc-pagination-next.rc-pagination-item-active a, 
+.rc-pagination-next.rc-pagination-item-active a:hover, 
+.rc-pagination-total-text.rc-pagination-item-active a, 
+.rc-pagination-total-text.rc-pagination-item-active a:hover {
+    background-color: #5a8dee;
+    border-color: #5a8dee;
+    color: #ffffff !important;
+}
+.rc-pagination-item a:hover, 
+.rc-pagination-item button:hover, 
+.rc-pagination-prev a:hover, 
+.rc-pagination-prev button:hover, 
+.rc-pagination-next a:hover, 
+.rc-pagination-next button:hover, 
+.rc-pagination-total-text a:hover, 
+.rc-pagination-total-text button:hover {
+    background-color: #eceff5;
+    border-color: #eceff5;
+}
+
+`
+
+export default index
